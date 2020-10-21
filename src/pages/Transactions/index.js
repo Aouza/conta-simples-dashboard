@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { api } from "../../services/api";
-import { UserContext } from "../../context/UserContext";
 import { Container, Wrapper } from "./styles";
 import TransactionsDetails from "../../components/TransactionsDetails";
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
 
-  const { userLogado } = useContext(UserContext);
-
-  const id = userLogado.empresaId;
+  const userId = localStorage.getItem("@conta-simples:userLogado");
+  const id = JSON.parse(userId).empresaId;
 
   useEffect(() => {
     api.get("/transacoes").then((response) => {

@@ -22,7 +22,7 @@ import {
 const Login = () => {
   const [login, setLogin] = useState("");
 
-  const { setUserLogado, setTransactions } = useContext(UserContext);
+  const { setUserLogado } = useContext(UserContext);
 
   const history = useHistory();
 
@@ -39,9 +39,10 @@ const Login = () => {
       if (companyFiltered.length) {
         setUserLogado(companyFiltered[0]);
 
-        api.get("/transacoes").then((response) => {
-          setTransactions(response.data);
-        });
+        localStorage.setItem(
+          "@conta-simples:userLogado",
+          JSON.stringify(companyFiltered[0])
+        );
 
         history.push("/dashboard");
       }

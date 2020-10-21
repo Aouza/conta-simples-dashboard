@@ -6,6 +6,9 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  max-width: 70rem;
+  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "header header"
@@ -67,7 +70,7 @@ export const BalanceGroup = styled.div`
 export const Balance = styled.div`
   background-color: var(--main-color-white);
   padding: 2rem;
-  margin: 0 5rem 2rem 5rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -88,7 +91,7 @@ export const Balance = styled.div`
 
 export const RecentTransactions = styled.div`
   border-radius: 0.2rem;
-  margin: 0 5rem 2rem 5rem;
+  margin-bottom: 2rem;
   padding: 2rem 1rem;
 
   > h3 {

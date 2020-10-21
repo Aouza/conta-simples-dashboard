@@ -10,17 +10,13 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log("change");
-
     setHeaderLocation(location.pathname);
   }, [location]);
-
-  console.log(location);
 
   return (
     <>
       <UserContextProvider>
-        {<Aside />}
+        <Aside />
         <Routes />
       </UserContextProvider>
 

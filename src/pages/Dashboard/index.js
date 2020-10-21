@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { convertMoney } from "../../tools/convertMoney";
+import { api } from "../../services/api";
 import {
   VictoryPie,
   VictoryAxis,
@@ -25,20 +26,28 @@ const Dashboard = () => {
   const [income, setIncome] = useState("");
   const [expense, setExpense] = useState("");
 
-  const { userLogado, transactions } = useContext(UserContext);
+  const { transactions, setTransactions } = useContext(UserContext);
 
-  const id = userLogado.empresaId;
+  const userId = localStorage.getItem("@conta-simples:userLogado");
+  const userLogado = JSON.parse(userId);
+  const id = JSON.parse(userId).empresaId;
+
+  useEffect(() => {
+    api.get("/transacoes").then((response) => {
+      setTransactions(response.data);
+    });
+  }, [setTransactions]);
 
   useEffect(() => {
     const incomeFilter = transactions
       .filter((expenseItem) => expenseItem.credito === true)
-      .filter((empresaa) => empresaa.empresaId === id)
+      .filter((empresa) => empresa.empresaId === id)
       .reduce((acc, item) => acc + item.valor, 0);
     setIncome(incomeFilter);
 
     const expenseFilter = transactions
       .filter((expenseItem) => expenseItem.credito !== true)
-      .filter((empresaa) => empresaa.empresaId === id)
+      .filter((empresa) => empresa.empresaId === id)
       .reduce((acc, item) => acc + item.valor, 0);
     setExpense(expenseFilter);
   }, [id, transactions]);

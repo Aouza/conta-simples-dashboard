@@ -1,16 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { UserContext } from "../../context/UserContext";
 
 import { Container } from "./styles";
 import Transaction from "./Transaction";
 
 const Transactions = ({ data }) => {
-  const { userLogado } = useContext(UserContext);
-
-  const id = userLogado.empresaId;
+  const userId = localStorage.getItem("@conta-simples:userLogado");
+  const id = JSON.parse(userId).empresaId;
 
   return (
     <Container>
