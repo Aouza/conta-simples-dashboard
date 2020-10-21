@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Routes from "./routes";
-import { BrowserRouter } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { useLocation } from "react-router-dom";
 import GlobalStyle from "./styles";
 import Aside from "./components/Aside";
 import { UserContextProvider } from "./context/UserContext";
 
 const App = () => {
   const [headerLocation, setHeaderLocation] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-    const { location } = createBrowserHistory();
+    console.log("change");
 
-    setHeaderLocation(location);
-  }, []);
+    setHeaderLocation(location.pathname);
+  }, [location]);
+
+  console.log(location);
 
   return (
-    <BrowserRouter>
+    <>
       <UserContextProvider>
-        {headerLocation.pathname !== "/" && <Aside />}
+        {<Aside />}
         <Routes />
       </UserContextProvider>
 
-      <GlobalStyle location={headerLocation.pathname} />
-    </BrowserRouter>
+      <GlobalStyle location={headerLocation} />
+    </>
   );
 };
 

@@ -1,14 +1,4 @@
-import { useContext, useEffect } from "react";
 import { createGlobalStyle, css } from "styled-components";
-import { UserContext } from "../context/UserContext";
-
-export const Styles = () => {
-  const { userLogado } = useContext(UserContext);
-
-  useEffect(() => {
-    console.log(userLogado);
-  }, [userLogado]);
-};
 
 export default createGlobalStyle`
 
@@ -57,12 +47,18 @@ ${({ location }) =>
         #root {
           display: grid;
           grid-template-columns: 200px auto;
+          > header {
+            display: block;
+          }
         }
       `
     : css`
         #root {
           display: initial;
           grid-template-columns: 200px auto;
+          > header {
+            display: none;
+          }
         }
       `}
 
