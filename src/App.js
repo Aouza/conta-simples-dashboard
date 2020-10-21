@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Routes from "./routes";
+import { BrowserRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import GlobalStyle from "./styles";
+import Aside from "./components/Aside";
+import { UserContextProvider } from "./context/UserContext";
 
-function App() {
+const App = () => {
+  const [headerLocation, setHeaderLocation] = useState("");
+
+  useEffect(() => {
+    const { location } = createBrowserHistory();
+
+    setHeaderLocation(location);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <UserContextProvider>
+        {headerLocation.pathname !== "/" && <Aside />}
+        <Routes />
+      </UserContextProvider>
+
+      <GlobalStyle location={headerLocation.pathname} />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
