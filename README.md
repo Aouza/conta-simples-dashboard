@@ -23,7 +23,7 @@
   </a>
 </p>
 
-## :four_leaf_clover: Tecnologias
+## :four_leaf_clover: Tecnologias utilizadas
 
 Esse projeto está sendo desenvolvido com as seguintes tecnologias.
 
