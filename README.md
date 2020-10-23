@@ -29,11 +29,9 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias.
 
 - [ReactJS](https://reactjs.org/)
 - [Axios](https://github.com/axios/axios)
-- [History](https://www.npmjs.com/package/history)
 - [styled-components](https://www.styled-components.com/)
 - [React-Icons](https://react-icons.netlify.com/)
 - [json-server](https://github.com/typicode/json-server)
-- [Reactotron](https://infinite.red/reactotron)
 - [VS Code][vc]
 
 ## :rocket: Subindo a aplicação
