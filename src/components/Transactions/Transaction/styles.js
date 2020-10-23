@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   font-size: 0.8rem;
   background: #fff;
   margin-bottom: 0.3rem;
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0.3rem;
   border-left: 3px solid var(--main-color-green);
   cursor: pointer;
 

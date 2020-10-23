@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import { convertMoney } from "../../tools/convertMoney";
 import { api } from "../../services/api";
 import {
@@ -34,7 +35,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     api.get("/transacoes").then((response) => {
-      setTransactions(response.data);
+      const reverseTransactions = response.data;
+      setTransactions(reverseTransactions.reverse());
     });
   }, [setTransactions]);
 
@@ -84,10 +86,10 @@ const Dashboard = () => {
             <h2>{userLogado?.saldo && convertMoney(userLogado.saldo)}</h2>
             <div>
               <p>
-                <span>Saída: </span> {convertMoney(expense)}
+                <HiTrendingUp /> + {convertMoney(income)}
               </p>
               <p>
-                <span>Entrada: </span> {convertMoney(income)}
+                <HiTrendingDown /> - {convertMoney(expense)}
               </p>
             </div>
           </Balance>

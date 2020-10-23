@@ -14,6 +14,12 @@ export const Wrapper = styled.div`
       width: 8rem;
     }
   }
+
+  @media (max-width: 50rem) {
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const Navigation = styled.ul`
@@ -26,10 +32,11 @@ export const Navigation = styled.ul`
       align-items: center;
       padding: 0.6rem 0.6rem;
       margin-top: 1rem;
-      border-radius: 1rem;
+      border-radius: 0.3rem;
       background: #000;
       color: #fff;
       font-size: 0.8rem;
+      box-shadow: 2px 2px 5px var(--light-box-shadow);
 
       > svg {
         margin-right: 1rem;
@@ -38,6 +45,29 @@ export const Navigation = styled.ul`
         border-radius: 0.5rem;
         padding: 0.5rem;
         box-sizing: initial;
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+
+    > li {
+      > a {
+        background: var(--main-color-white);
+        color: var(--main-color-black);
+        box-shadow: none;
+
+        > span {
+          display: none;
+        }
+
+        > svg {
+          font-size: 1.4rem;
+          margin: 0;
+        }
       }
     }
   }

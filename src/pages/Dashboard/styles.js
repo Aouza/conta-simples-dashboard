@@ -8,13 +8,31 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   max-width: 70rem;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-areas:
     "header header"
     "balanceGroup graphicGroup";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
+
+  @media (max-width: 86rem) {
+    max-width: 50rem;
+    grid-template-areas:
+      "header"
+      "balanceGroup"
+      "graphicGroup";
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 50rem) {
+    max-width: 50rem;
+    grid-template-areas:
+      "header"
+      "balanceGroup"
+      "graphicGroup";
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Header = styled.div`
@@ -61,6 +79,20 @@ export const Header = styled.div`
       }
     }
   }
+
+  @media (max-width: 86rem) {
+    flex-direction: column;
+    align-items: initial;
+
+    div {
+      margin-bottom: 1rem;
+
+      > p {
+        margin-left: 0rem;
+        margin-right: 2rem;
+      }
+    }
+  }
 `;
 
 export const BalanceGroup = styled.div`
@@ -70,12 +102,27 @@ export const BalanceGroup = styled.div`
 export const Balance = styled.div`
   background-color: var(--main-color-white);
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 1rem;
   border-radius: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 
-  > div > p {
-    font-size: 0.8rem;
+  > div {
+    display: flex;
+
+    > p {
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+
+      > svg {
+        padding: 0.5rem;
+        box-sizing: initial;
+        background-color: var(--light-box-shadow);
+        margin-right: 1rem;
+        border-radius: 0.3rem;
+      }
+    }
   }
 
   > span {
@@ -96,6 +143,8 @@ export const RecentTransactions = styled.div`
 
   > h3 {
     margin-bottom: 3rem;
+    font-size: 1rem;
+    color: var(--main-color-dark-gray);
   }
 `;
 

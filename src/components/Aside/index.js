@@ -8,7 +8,7 @@ const Aside = () => {
   return (
     <Container>
       <Wrapper>
-        <Link to="/">
+        <Link to="/dashboard">
           <img src={LogoImage} alt="Conta Simples" />
         </Link>
         <Navigation>
@@ -16,7 +16,8 @@ const Aside = () => {
             <li key={item.title}>
               <Link to={item.link}>
                 {item.icon}
-                {item.title}
+
+                <span>{item.title}</span>
               </Link>
             </li>
           ))}

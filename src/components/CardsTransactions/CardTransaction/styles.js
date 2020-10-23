@@ -11,6 +11,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 50rem) {
+    margin-top: 2rem;
+  }
 `;
 
 export const CardName = styled.h3`

@@ -10,6 +10,21 @@ export const Container = styled.div`
   position: relative;
   font-size: 0.9rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 86rem) {
+    grid-template-columns: 0.3fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 66rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 36rem) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Status = styled.div`
@@ -34,7 +49,9 @@ export const Date = styled.div`
   color: var(--main-color-text-gray);
 `;
 
-export const Descricao = styled.div``;
+export const Descricao = styled.div`
+  letter-spacing: 0rem;
+`;
 
 export const Estabelecimento = styled.div`
   font-size: 0.7rem;

@@ -20,6 +20,10 @@ export const Container = styled.div`
   & + div {
     margin-top: 1rem;
   }
+
+  @media (max-width: 72rem) {
+    background-color: var(--light-box-shadow);
+  }
 `;
 
 export const InputItem = styled.input`

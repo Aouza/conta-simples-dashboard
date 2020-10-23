@@ -6,8 +6,21 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: 90%;
   max-width: 70rem;
   margin: 0 auto;
   padding: 4rem 0;
+
+  > h1 {
+    font-weight: 900;
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 92rem) {
+    max-width: 50rem;
+  }
+
+  @media (max-width: 66rem) {
+    max-width: 30rem;
+  }
 `;

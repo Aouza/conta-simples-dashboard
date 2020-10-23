@@ -6,6 +6,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  @media (max-width: 72rem) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Header = styled.header`
@@ -43,6 +47,10 @@ export const ImageSide = styled.div`
   > img {
     width: 60%;
   }
+
+  @media (max-width: 72rem) {
+    display: none;
+  }
 `;
 
 export const LoginSide = styled.div`
@@ -68,6 +76,10 @@ export const LoginSide = styled.div`
         color: var(--main-color-white);
       }
     }
+  }
+
+  @media (max-width: 72rem) {
+    background-color: var(--main-color-white);
   }
 `;
 

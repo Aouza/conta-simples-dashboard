@@ -50,6 +50,10 @@ ${({ location }) =>
           > header {
             display: block;
           }
+
+          @media (max-width: 50rem) {
+            grid-template-columns: 1fr;
+          }
         }
       `
     : css`
