@@ -18,38 +18,49 @@ import {
   LinkToSignUp,
   Header,
 } from "./styles";
+import Loading from "../../components/Loading";
 
 const Login = () => {
   const [login, setLogin] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { setUserLogado } = useContext(UserContext);
 
   const history = useHistory();
 
   const handleLogin = (e) => {
+    setLoading(true);
     e.preventDefault();
-
     setUserLogado(null);
 
-    api.get("/empresas").then((response) => {
-      const companyFiltered = response.data.filter(
-        (empresa) => empresa.cnpj === login
-      );
-
-      if (companyFiltered.length) {
-        setUserLogado(companyFiltered[0]);
-
-        localStorage.setItem(
-          "@conta-simples:userLogado",
-          JSON.stringify(companyFiltered[0])
+    try {
+      api.get("/empresas").then((response) => {
+        const companyFiltered = response.data.filter(
+          (empresa) => empresa.cnpj === login
         );
 
-        history.push("/dashboard");
-      }
-    });
+        if (companyFiltered.length && response.status === 200) {
+          setUserLogado(companyFiltered[0]);
+
+          localStorage.setItem(
+            "@conta-simples:userLogado",
+            JSON.stringify(companyFiltered[0])
+          );
+
+          history.push("/dashboard");
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Container>
       <Header>
         <img src={LogoImage} alt="Conta Simples" />

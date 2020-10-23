@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -17,8 +18,8 @@
     "victory": "^35.3.0"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"npx json-server --watch -p 3333 src/services/api.json\"",
-    "build": "concurrently \"react-scripts build\" \"npx json-server --watch -p 3333 src/services/api.json\"",
+    "start": "concurrently \"react-scripts start\" \"npx json-server --watch -p 3333 -d 1000 src/services/api.json\"",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

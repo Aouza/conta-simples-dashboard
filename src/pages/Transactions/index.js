@@ -3,15 +3,18 @@ import { api } from "../../services/api";
 import { Container, Wrapper } from "./styles";
 import TransactionsDetails from "../../components/TransactionsDetails";
 import Filter from "../../components/Filter";
+import Loading from "../../components/Loading";
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
   const [transactionsDataFiltered, setTransactionsDataFiltered] = useState();
+  const [loading, setLoading] = useState(false);
 
   const userId = localStorage.getItem("@conta-simples:userLogado");
   const id = JSON.parse(userId).empresaId;
 
   useEffect(() => {
+    setLoading(true);
     api.get("/transacoes").then((response) => {
       const reverseTransactions = response.data;
       const data = reverseTransactions.reverse();
@@ -19,12 +22,16 @@ function Transactions() {
       setTransactions(
         data.filter((transaction) => transaction.empresaId === id)
       );
+
+      setLoading(false);
     });
   }, [id]);
 
   console.log(transactionsDataFiltered);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Container>
       <Wrapper>
         <div>

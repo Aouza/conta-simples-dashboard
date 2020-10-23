@@ -9,6 +9,7 @@ import {
   VictoryBar,
   VictoryTheme,
 } from "victory";
+import Loading from "../../components/Loading";
 import Transactions from "../../components/Transactions";
 import { UserContext } from "../../context/UserContext";
 
@@ -26,6 +27,7 @@ import {
 const Dashboard = () => {
   const [income, setIncome] = useState("");
   const [expense, setExpense] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { transactions, setTransactions } = useContext(UserContext);
 
@@ -34,9 +36,12 @@ const Dashboard = () => {
   const id = JSON.parse(userId).empresaId;
 
   useEffect(() => {
+    setLoading(true);
     api.get("/transacoes").then((response) => {
       const reverseTransactions = response.data;
       setTransactions(reverseTransactions.reverse());
+
+      setLoading(false);
     });
   }, [setTransactions]);
 
@@ -54,7 +59,9 @@ const Dashboard = () => {
     setExpense(expenseFilter);
   }, [id, transactions]);
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Container>
       <Wrapper>
         <Header>
