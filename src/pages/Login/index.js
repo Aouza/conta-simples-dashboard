@@ -18,7 +18,6 @@ import {
   LinkToSignUp,
   Header,
 } from "./styles";
-import Loading from "../../components/Loading";
 
 const Login = () => {
   const [login, setLogin] = useState("");
@@ -47,20 +46,17 @@ const Login = () => {
             JSON.stringify(companyFiltered[0])
           );
 
+          setLoading(false);
           history.push("/dashboard");
         }
       });
     } catch (err) {
       console.log(err);
-      setLoading(false);
     } finally {
-      setLoading(false);
     }
   };
 
-  return loading ? (
-    <Loading />
-  ) : (
+  return (
     <Container>
       <Header>
         <img src={LogoImage} alt="Conta Simples" />
@@ -99,7 +95,11 @@ const Login = () => {
 
           <AcessItems>
             <a href="!#">Esqueceu sua senha?</a>
-            <Button type="submit" value="Entrar" />
+            {loading ? (
+              <Button type="button" disabled value="Validando..." />
+            ) : (
+              <Button type="submit" value="Entrar" />
+            )}
           </AcessItems>
 
           <LinkToSignUp>

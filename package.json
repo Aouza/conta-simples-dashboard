@@ -18,7 +18,7 @@
     "victory": "^35.3.0"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"npx json-server --watch -p 3333 -d 1000 src/services/api.json\"",
+    "start": "concurrently \"react-scripts start\" \"npx json-server --watch -p 3333 src/services/api.json\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
