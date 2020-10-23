@@ -27,12 +27,14 @@ function Transactions() {
   return (
     <Container>
       <Wrapper>
-        <h1>Transações</h1>
+        <div>
+          <h1>Transações</h1>
+          <Filter
+            data={transactions}
+            setTransactions={setTransactionsDataFiltered}
+          />
+        </div>
 
-        <Filter
-          data={transactions}
-          setTransactions={setTransactionsDataFiltered}
-        />
         {transactionsDataFiltered ? (
           <TransactionsDetails data={transactionsDataFiltered} />
         ) : (

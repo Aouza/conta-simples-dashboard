@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   border-radius: 0.3rem;
   border-left: 3px solid var(--main-color-green);
   cursor: pointer;
+  position: relative;
 
   ${({ credit }) =>
     !credit &&
@@ -33,6 +34,12 @@ export const ValueTransaction = styled.div`
     css`
       color: tomato;
     `}
+
+  @media (max-width: 40rem) {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
 `;
 
 export const Establishment = styled.div`

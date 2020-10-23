@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 4rem 0;
 
-  > h1 {
+  > div > h1 {
     font-weight: 900;
     font-size: 1.6rem;
   }
@@ -22,5 +22,12 @@ export const Wrapper = styled.div`
 
   @media (max-width: 66rem) {
     max-width: 30rem;
+  }
+
+  @media (max-width: 36rem) {
+    > div:first-child {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 `;

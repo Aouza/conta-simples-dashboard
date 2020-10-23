@@ -45,11 +45,13 @@ export const Header = styled.div`
 
   div {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
     > span {
       font-weight: bold;
       font-size: 0.8rem;
+
       &:after {
         content: "";
         background-color: var(--main-color-green);
@@ -60,6 +62,7 @@ export const Header = styled.div`
         margin: 0 1.4rem;
       }
     }
+
     > h2 {
       font-size: 0.8rem;
 
@@ -93,6 +96,18 @@ export const Header = styled.div`
       }
     }
   }
+
+  @media (max-width: 50rem) {
+    div {
+      > span {
+        margin-bottom: 0.4rem;
+
+        > p {
+          margin-bottom: 0.1rem;
+        }
+      }
+    }
+  }
 `;
 
 export const BalanceGroup = styled.div`
@@ -107,13 +122,13 @@ export const Balance = styled.div`
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 
   > div {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     > p {
       font-size: 0.8rem;
       display: flex;
       align-items: center;
-      margin-right: 2rem;
 
       > svg {
         padding: 0.5rem;
@@ -134,6 +149,26 @@ export const Balance = styled.div`
     margin: 1rem 0;
     font-weight: 900;
   }
+
+  @media (max-width: 40rem) {
+    > div {
+      > p {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 0.7rem;
+
+        > svg {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    > h2 {
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 export const RecentTransactions = styled.div`
@@ -153,6 +188,10 @@ export const GraphicGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: flex-start;
+
+  @media (max-width: 40rem) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Graphic = styled.div`
