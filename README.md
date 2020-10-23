@@ -45,7 +45,7 @@ Para clonar e subir a aplicação, é necessário ter o [Git](https://git-scm.co
 $ git clone https://github.com/Aouza/conta-simples-dashboard
 
 # Vá até o repositório.
-$ cd react-rocketshoes
+$ cd conta-simples
 
 # Instale as dependências.
 $ yarn install
