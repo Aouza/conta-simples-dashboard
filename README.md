@@ -9,8 +9,8 @@
 </h4>
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#four_leaf_clover-tecnologias-utilizadas">Tecnologias utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-subindo-a-aplicação">Subindo a aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <h2 align="center">
@@ -23,7 +23,7 @@
   </a>
 </p>
 
-## :rocket: Tecnologias
+## :four_leaf_clover: Tecnologias
 
 Esse projeto está sendo desenvolvido com as seguintes tecnologias.
 
@@ -36,7 +36,7 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias.
 - [Reactotron](https://infinite.red/reactotron)
 - [VS Code][vc]
 
-## :information_source: Como usar
+## :rocket: Subindo a aplicação
 
 Para clonar e subir a aplicação, é necessário ter o [Git](https://git-scm.com) e o [Node.js][nodejs] instalados em sua máquina.
 
