@@ -27,8 +27,6 @@ function Transactions() {
     });
   }, [id]);
 
-  console.log(transactionsDataFiltered);
-
   return loading ? (
     <Loading />
   ) : (
