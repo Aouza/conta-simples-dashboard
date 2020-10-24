@@ -200,4 +200,8 @@ export const Graphic = styled.div`
   background-color: var(--main-color-white);
   border-radius: 1rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+  > div {
+    touch-action: manipulation !important;
+  }
 `;

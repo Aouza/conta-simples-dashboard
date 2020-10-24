@@ -111,7 +111,10 @@ const Dashboard = () => {
         <GraphicGroup>
           <Graphic>
             {!!income && (
-              <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
+              <VictoryChart
+                theme={VictoryTheme.material}
+                domainPadding={{ x: 50 }}
+              >
                 <VictoryAxis tickValues={[1, 2]} />
                 <VictoryAxis
                   dependentAxis
@@ -123,6 +126,7 @@ const Dashboard = () => {
                     { x: "Saída", y: expense },
                   ]}
                   style={{ data: { fill: "#333" } }}
+                  alignment="middle"
                 />
               </VictoryChart>
             )}
