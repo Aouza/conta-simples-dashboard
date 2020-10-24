@@ -9,5 +9,5 @@ export const menuItems = [
 ];
 
 export const api = axios.create({
-  baseURL: "http://localhost:3333/",
+  baseURL: "https://api-simples-dashboard.herokuapp.com/",
 });
