@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
 
-  @media (max-width: 86rem) {
+  @media (max-width: 72rem) {
     max-width: 50rem;
     grid-template-areas:
       "header"
@@ -83,7 +83,7 @@ export const Header = styled.div`
     }
   }
 
-  @media (max-width: 86rem) {
+  @media (max-width: 72rem) {
     flex-direction: column;
     align-items: initial;
 
