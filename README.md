@@ -29,9 +29,13 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias.
 
 - [ReactJS](https://reactjs.org/)
 - [Axios](https://github.com/axios/axios)
+- [react-router-dom](https://github.com/ReactTraining/react-router)
 - [styled-components](https://www.styled-components.com/)
 - [React-Icons](https://react-icons.netlify.com/)
 - [json-server](https://github.com/typicode/json-server)
+- [@agney/react-loading](https://github.com/agneym/react-loading)
+- [Concurrently](https://github.com/kimmobrunfeldt/concurrently)
+- [Victory](https://github.com/formidablelabs/victory)
 - [VS Code][vc]
 
 ## :rocket: Subindo a aplicação
@@ -46,10 +50,25 @@ $ git clone https://github.com/Aouza/conta-simples-dashboard
 $ cd conta-simples
 
 # Instale as dependências.
-$ yarn install
+$ yarn
+
+# Ou
+
+$ npm install
 
 # Suba a aplicação.
 $ yarn start
+
+# Ou
+
+$ npm run start
+
+# Caso a API fake não suba:
+$ yarn json-server --watch -p 3333 src/services/api.json
+
+# Ou
+
+$ npx json-server --watch -p 3333 src/services/api.json
 ```
 
 ---
